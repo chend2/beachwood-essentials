@@ -1,0 +1,15 @@
+<!-- snippets/homepage-images.liquid -->
+<div id="staggered-image-wrapper">
+<div id="left-images" class="desktop-7 mobile-3">
+{% if settings.staggered-1 %}<a href="{{ settings.homepage-left-1-url }}"><img src="{{ 'hompage-left-1.jpg' | asset_url }}" alt="{{ settings.homepage-left-1-alt }}"></a>{% endif %}
+{% if settings.staggered-2 %}<a href="{{ settings.homepage-left-2-url }}"><img src="{{ 'hompage-left-2.jpg' | asset_url }}" alt="{{ settings.homepage-left-2-alt }}" class="last"></a>{% endif %}
+</div>
+
+<div id="right-images" class="desktop-5 mobile-3">
+{% if settings.staggered-3 %}<a href="{{ settings.homepage-right-1-url }}"><img src="{{ 'hompage-right-1.jpg' | asset_url }}" alt="{{ settings.homepage-right-1-alt }}"></a>{% endif %}
+{% if settings.staggered-4 %}<a href="{{ settings.homepage-right-2-url }}"><img src="{{ 'hompage-right-2.jpg' | asset_url }}" alt="{{ settings.homepage-right-2-alt }}"></a>{% endif %}
+{% if settings.staggered-5 %}<a href="{{ settings.homepage-right-3-url }}"><img src="{{ 'hompage-right-3.jpg' | asset_url }}" alt="{{ settings.homepage-right-3-alt }}" class="last"></a>{% endif %}
+</div>
+</div>
+
+<div class="clear"></div>

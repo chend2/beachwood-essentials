@@ -1,0 +1,148 @@
+<!-- snippets/custom-collections.liquid -->
+
+<div>
+{% for collection in collections %}
+
+	{% if collection.title == 'ESSENTIAL OILS' %} 
+
+		{% paginate collection.products by 30 %}
+	
+		<div id="collection-description" class="desktop-4">
+  			<h1 style="font-size: 200%">{{ collection.title }}</h>
+		</div>
+
+		{% if settings.filters %}
+
+			<div id="full-width-filter" class="desktop-12 tablet-6 mobile-3">
+      	    {% include 'dropdown-filter' %}
+			</div>
+	
+		{% endif %}
+
+		<div class="testdiv" style="margin: 0% 15% 0% 15%">
+			<ul id="product-loop">
+  				{% for product in collection.products limit: 6 %}
+ 					 <li class="product desktop-4 mobile-half{% cycle ' first', '', '' %}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">   
+    					{% include 'product-listing' %}
+  					</li>
+				{% endfor %}
+
+			</ul>
+		</div>
+
+
+		{% endpaginate %}
+
+	{% endif %}
+
+
+
+
+{% endfor %} 
+</div>
+
+<div>
+{% for collection in collections %}
+
+	{% if collection.title == 'Blend Oils' %} 
+
+		{% paginate collection.products by 30 %}
+	
+		<div id="collection-description" class="desktop-4">
+  			<h1 style="font-size: 200%">{{ collection.title }}</h>
+		</div>
+
+		{% if settings.filters %}
+
+			<div id="full-width-filter" class="desktop-12 tablet-6 mobile-3">
+      	    {% include 'dropdown-filter' %}
+			</div>
+	
+		{% endif %}
+
+		<div class="testdiv" style="margin: 0% 15% 0% 15%">
+			<ul id="product-loop">
+  				{% for product in collection.products limit: 6 %}
+ 					 <li class="product desktop-4 mobile-half{% cycle ' first', '', '' %}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">   
+    					{% include 'product-listing' %}
+  					</li>
+				{% endfor %}
+
+			</ul>
+		</div>
+
+
+		{% endpaginate %}
+
+	{% endif %}
+
+
+
+
+{% endfor %} 
+</div>
+
+<div>
+  {% for collection in collections %}
+
+	{% if collection.title == 'Carrier Oil' %} 
+
+		{% paginate collection.products by 30 %}
+	
+		<div id="collection-description" class="desktop-4">
+  			<h1 style="font-size: 200%">Carrier Oil</h1>
+		</div>
+<br>
+			<ul id="product-loop" style="padding-top: 10%">
+  				{% for product in collection.products limit: 2 %}
+ 					 <li class="product desktop-7 mobile-half{% cycle ' ' %}" data-alpha="{{ product.title }}" data-price="{{ product.price }}" style="text-align: center">   
+    					{% include 'product-listing' %}
+  					</li>
+				{% endfor %}
+
+			</ul>
+
+
+		{% endpaginate %}
+
+	{% endif %}
+
+
+
+
+{% endfor %} 
+</div>
+
+<div style="width:100%">
+  {% for collection in collections %}
+
+	{% if collection.title == 'BUNDLE' %} 
+
+		{% paginate collection.products by 30 %}
+	
+		<div id="collection-description" class="desktop-4">
+  			<h1 style="font-size: 200%">BUNDLE OFFER</h1>
+		</div>
+
+			<ul id="product-loop" style="width:100%">
+  				{% for product in collection.products limit: 2 %}
+ 					 <li class="product desktop-6 mobile-half{% cycle ' first', 'last' %}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">   
+    					{% include 'product-listing' %}
+  					</li>
+				{% endfor %}
+
+			</ul>
+
+
+		{% endpaginate %}
+
+	{% endif %}
+
+
+
+
+{% endfor %} 
+</div>
+<div>
+    {% include 'cross-sell' %}
+</div>

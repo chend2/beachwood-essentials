@@ -1,0 +1,20 @@
+<!-- snippets/homepage-instagram-feed.liquid -->
+<div id="follow-us">
+  <h2>
+    <span>{{ 'layout.homepage.instagram' | t }}</span>
+  </h2>
+  {% assign url = '{{image}}' %}
+  {% assign caption = '{{caption}}' %}
+  <div id="instagram-card">
+    <div id="instafeed"></div>
+    <script type="text/javascript">
+      var userFeed = new Instafeed({
+        get: 'user',
+        userId: {{ settings.instagram-user-id }},
+        accessToken: '{{ settings.instagram-access-token }}',
+        template: '<a class="fancybox desktop-2 mobile-half padded" href="{{url}}" rel="ig" title="{{ caption }}"><img class="instagram-image" src="{{ url }}" /></a>'
+      });
+      userFeed.run();        
+    </script>
+  </div>
+</div>
